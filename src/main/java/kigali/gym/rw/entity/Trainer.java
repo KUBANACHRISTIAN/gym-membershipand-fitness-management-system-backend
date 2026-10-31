@@ -1,4 +1,4 @@
-package kigali.gym.rw.Entity;
+package kigali.gym.rw.entity;
 
 import java.util.List;
 import java.util.UUID;

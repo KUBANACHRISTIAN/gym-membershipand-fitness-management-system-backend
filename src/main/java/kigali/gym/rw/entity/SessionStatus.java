@@ -1,4 +1,4 @@
-package kigali.gym.rw.Entity;
+package kigali.gym.rw.entity;
 
 public enum SessionStatus {
     BOOKED,
