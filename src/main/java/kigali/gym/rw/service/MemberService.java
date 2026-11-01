@@ -10,12 +10,15 @@ import org.springframework.stereotype.Service;
 import kigali.gym.rw.entity.Member;
 import kigali.gym.rw.repository.MemberRepository;
 import kigali.gym.rw.repository.TrainingSessionRepository;
+import kigali.gym.rw.repository.TrainerRepository;
 
 @Service
 public class MemberService {
 
     @Autowired
     private MemberRepository memberRepo;
+    @Autowired        
+    private TrainerRepository trainerRepo;
 
     @Autowired
     private TrainingSessionRepository sessionRepo;
@@ -94,5 +97,15 @@ public class MemberService {
      // B1
     public List<Member> getMembersByLastName(String lastName) {
         return memberRepo.findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
+    }
+    // C4
+    
+    public Optional<List<Member>> getMembersOfTrainer(UUID trainerId) {
+
+        if (!trainerRepo.existsById(trainerId)) {
+            return Optional.empty();
+        }
+
+        return Optional.of(memberRepo.findMembersOfTrainer(trainerId));
     }
 }

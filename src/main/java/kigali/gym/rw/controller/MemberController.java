@@ -94,4 +94,19 @@ public class MemberController {
 
         return new ResponseEntity<>(members, HttpStatus.OK);
     }
+     // C4
+    @GetMapping("/of-trainer/{trainerId}")
+    public ResponseEntity<?> getMembersOfTrainer(@PathVariable("trainerId") UUID trainerId) {
+
+        Optional<List<Member>> members = memberService.getMembersOfTrainer(trainerId);
+
+        if (members.isEmpty()) {
+            return new ResponseEntity<>(
+                    "The trainer with that id does not exist",
+                    HttpStatus.NOT_FOUND
+            );
+        }
+
+        return new ResponseEntity<>(members.get(), HttpStatus.OK);
+    }
 }
