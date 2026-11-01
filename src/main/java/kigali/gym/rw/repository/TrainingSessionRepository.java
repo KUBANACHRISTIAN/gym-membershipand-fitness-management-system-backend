@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 
 import kigali.gym.rw.entity.SessionStatus;
 import kigali.gym.rw.entity.TrainingSession;
+import java.util.List;
+import kigali.gym.rw.entity.SessionStatus;
 
 @Repository
 public interface TrainingSessionRepository extends JpaRepository<TrainingSession, UUID> {
@@ -20,4 +22,6 @@ public interface TrainingSessionRepository extends JpaRepository<TrainingSession
     boolean existsByMember_Id(UUID memberId);
 
     boolean existsByTrainer_Id(UUID trainerId);
+   // B2
+    List<TrainingSession> findByStatusOrderBySessionDateAsc(SessionStatus status);
 }
