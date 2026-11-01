@@ -12,6 +12,9 @@ import java.util.List;
 import kigali.gym.rw.entity.SessionStatus;
 import java.time.LocalDate;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 @Repository
 public interface TrainingSessionRepository extends JpaRepository<TrainingSession, UUID> {
@@ -24,6 +27,16 @@ public interface TrainingSessionRepository extends JpaRepository<TrainingSession
     boolean existsByMember_Id(UUID memberId);
 
     boolean existsByTrainer_Id(UUID trainerId);
+   // F2
+    @Modifying(clearAutomatically = true)
+    @Query("""
+    UPDATE TrainingSession s
+    SET s.status = kigali.gym.rw.entity.SessionStatus.CANCELLED
+    WHERE s.trainer.id = :trainerId
+      AND s.sessionDate = :date
+      AND s.status <> kigali.gym.rw.entity.SessionStatus.FINISHED
+    """)
+    int cancelDayForTrainer(@Param("trainerId") UUID trainerId, @Param("date") LocalDate date);
    // B2
     List<TrainingSession> findByStatusOrderBySessionDateAsc(SessionStatus status);
     // B3 
