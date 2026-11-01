@@ -11,6 +11,7 @@ import kigali.gym.rw.entity.TrainingSession;
 import java.util.List;
 import kigali.gym.rw.entity.SessionStatus;
 import java.time.LocalDate;
+import org.springframework.data.jpa.repository.Query;
 
 @Repository
 public interface TrainingSessionRepository extends JpaRepository<TrainingSession, UUID> {
@@ -36,4 +37,11 @@ public interface TrainingSessionRepository extends JpaRepository<TrainingSession
             LocalDate sessionDate,
             SessionStatus status
     );
+   // F1
+    @Query("""
+    SELECT s.status, COUNT(s)
+    FROM TrainingSession s
+    GROUP BY s.status
+    """)
+    List<Object[]> countSessionsByStatus();
 }
