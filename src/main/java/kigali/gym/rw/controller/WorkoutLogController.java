@@ -53,4 +53,16 @@ public class WorkoutLogController {
 
         return new ResponseEntity<>(logs, HttpStatus.OK);
     }
+        // E3
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteWorkoutLog(@PathVariable("id") UUID id) {
+
+        String message = workoutLogService.deleteWorkoutLog(id);
+
+        if (message.equals("The workout log with that id does not exist")) {
+            return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(message, HttpStatus.OK);
+    }
 }

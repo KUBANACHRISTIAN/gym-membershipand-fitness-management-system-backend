@@ -51,4 +51,15 @@ public class WorkoutLogService {
     public List<WorkoutLog> getLogsOfMember(String membershipNumber) {
         return workoutLogRepo.findLogsOfMember(membershipNumber);
     }
+       // E3
+    public String deleteWorkoutLog(UUID id) {
+
+        if (!workoutLogRepo.existsById(id)) {
+            return "The workout log with that id does not exist";
+        }
+
+        workoutLogRepo.deleteById(id);
+
+        return "Workout log deleted successfully";
+    }
 }
