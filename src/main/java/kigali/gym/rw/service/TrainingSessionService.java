@@ -24,6 +24,10 @@ import java.time.LocalDate;
 import kigali.gym.rw.repository.WorkoutLogRepository;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class TrainingSessionService {
@@ -246,5 +250,13 @@ public class TrainingSessionService {
         }
 
         return res;
+    }
+    // F2
+    @Transactional
+    public String cancelDay(UUID trainerId, LocalDate date) {
+
+        int res = sessionRepo.cancelDayForTrainer(trainerId, date);
+
+        return res + " training sessions cancelled";
     }
 }

@@ -158,4 +158,14 @@ public class TrainingSessionController {
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
+        // F2
+    @PatchMapping("/cancel-day")
+    public ResponseEntity<?> cancelDay(
+            @RequestParam("trainerId") UUID trainerId,
+            @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
+
+        String message = sessionService.cancelDay(trainerId, date);
+
+        return new ResponseEntity<>(message, HttpStatus.OK);
+    }
 }
