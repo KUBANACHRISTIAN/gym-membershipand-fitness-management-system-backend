@@ -19,6 +19,7 @@ import kigali.gym.rw.entity.TrainingSession;
 import kigali.gym.rw.service.TrainingSessionService;
 import kigali.gym.rw.entity.SessionStatus;
 import java.time.LocalDate;
+import java.util.Map;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -148,5 +149,13 @@ public class TrainingSessionController {
         }
 
         return new ResponseEntity<>(message, HttpStatus.OK);
+    }
+        // F1
+    @GetMapping("/stats/by-status")
+    public ResponseEntity<?> countSessionsByStatus() {
+
+        Map<String, Long> result = sessionService.countSessionsByStatus();
+
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }

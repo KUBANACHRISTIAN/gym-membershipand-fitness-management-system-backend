@@ -22,6 +22,8 @@ import kigali.gym.rw.repository.TrainerRepository;
 import kigali.gym.rw.repository.TrainingSessionRepository;
 import java.time.LocalDate;
 import kigali.gym.rw.repository.WorkoutLogRepository;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @Service
 public class TrainingSessionService {
@@ -233,5 +235,16 @@ public class TrainingSessionService {
         sessionRepo.save(session.get());
 
         return "Training session status updated successfully";
+    }
+        // F1
+    public Map<String, Long> countSessionsByStatus() {
+
+        Map<String, Long> res = new LinkedHashMap<>();
+
+        for (Object[] row : sessionRepo.countSessionsByStatus()) {
+            res.put(row[0].toString(), (Long) row[1]);
+        }
+
+        return res;
     }
 }
