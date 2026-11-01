@@ -114,4 +114,23 @@ public class TrainerController {
 
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
+        // D4
+    @PatchMapping("/{trainerId}/studio")
+    public ResponseEntity<?> changeStudio(
+            @PathVariable("trainerId") UUID trainerId,
+            @RequestParam("studioNumber") int studioNumber) {
+
+        String message = trainerService.changeStudio(trainerId, studioNumber);
+
+        if (message.equals("The trainer with that id does not exist")
+                || message.equals("The studio with that studioNumber does not exist")) {
+            return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+        }
+
+        if (message.equals("That studio is taken by another trainer")) {
+            return new ResponseEntity<>(message, HttpStatus.CONFLICT);
+        }
+
+        return new ResponseEntity<>(message, HttpStatus.OK);
+    }
 }

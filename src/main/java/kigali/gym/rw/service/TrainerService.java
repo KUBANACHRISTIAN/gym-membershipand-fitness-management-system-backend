@@ -192,4 +192,32 @@ public class TrainerService {
 
         return "Training specialty added to the trainer";
     }
+        // D4
+    public String changeStudio(UUID trainerId, int studioNumber) {
+
+        Optional<Trainer> trainer = trainerRepo.findById(trainerId);
+
+        if (trainer.isEmpty()) {
+            return "The trainer with that id does not exist";
+        }
+
+        Optional<Studio> studio = studioRepo.findByStudioNumber(studioNumber);
+
+        if (studio.isEmpty()) {
+            return "The studio with that studioNumber does not exist";
+        }
+
+        Studio current = trainer.get().getStudio();
+        boolean alreadyHere = current != null && current.getId().equals(studio.get().getId());
+
+        
+        if (!alreadyHere && trainerRepo.existsByStudio(studio.get())) {
+            return "That studio is taken by another trainer";
+        }
+
+        trainer.get().setStudio(studio.get());
+        trainerRepo.save(trainer.get());
+
+        return "Studio changed successfully";
+    }
 }
