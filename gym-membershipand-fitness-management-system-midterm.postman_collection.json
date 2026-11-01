@@ -2185,6 +2185,62 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "BONUS 200, 5 sessions, newest date first Copy",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "BONUS 200, the next 5 sessions Copy",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "BONUS 200, an empty content list, but the totals still show Copy",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "BONUS 200, an empty content list, but the totals still show Copy",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "BONUS Cannot sort by name Copy",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "BONUS 400 Copy",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C2 get all trainers Copy 2",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
     }
   ]
 }
