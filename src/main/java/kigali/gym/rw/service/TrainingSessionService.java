@@ -21,12 +21,15 @@ import kigali.gym.rw.repository.MemberRepository;
 import kigali.gym.rw.repository.TrainerRepository;
 import kigali.gym.rw.repository.TrainingSessionRepository;
 import java.time.LocalDate;
+import kigali.gym.rw.repository.WorkoutLogRepository;
 
 @Service
 public class TrainingSessionService {
 
     @Autowired
     private TrainingSessionRepository sessionRepo;
+    @Autowired
+    private WorkoutLogRepository workoutLogRepo;
 
     @Autowired
     private MemberRepository memberRepo;
@@ -159,10 +162,17 @@ public class TrainingSessionService {
         return "Training session updated successfully";
     }
 
+      // A2 + E3
     public String deleteSession(UUID id) {
 
-        if (!sessionRepo.existsById(id)) {
+        Optional<TrainingSession> session = sessionRepo.findById(id);
+
+        if (session.isEmpty()) {
             return "The training session with that id does not exist";
+        }
+
+        if (workoutLogRepo.existsByTrainingSession(session.get())) {
+            return "That training session has workout logs, delete them first";
         }
 
         sessionRepo.deleteById(id);

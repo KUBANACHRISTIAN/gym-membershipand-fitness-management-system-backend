@@ -97,13 +97,18 @@ public class TrainingSessionController {
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
 
+     // A2 + E3
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteSession(@PathVariable UUID id) {
 
         String message = sessionService.deleteSession(id);
 
-        if (message.contains("does not exist")) {
+        if (message.equals("The training session with that id does not exist")) {
             return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+        }
+
+        if (message.equals("That training session has workout logs, delete them first")) {
+            return new ResponseEntity<>(message, HttpStatus.CONFLICT);
         }
 
         return new ResponseEntity<>(message, HttpStatus.OK);
