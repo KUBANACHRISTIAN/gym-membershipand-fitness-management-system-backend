@@ -10,6 +10,7 @@ import kigali.gym.rw.entity.SessionStatus;
 import kigali.gym.rw.entity.TrainingSession;
 import java.util.List;
 import kigali.gym.rw.entity.SessionStatus;
+import java.time.LocalDate;
 
 @Repository
 public interface TrainingSessionRepository extends JpaRepository<TrainingSession, UUID> {
@@ -24,4 +25,9 @@ public interface TrainingSessionRepository extends JpaRepository<TrainingSession
     boolean existsByTrainer_Id(UUID trainerId);
    // B2
     List<TrainingSession> findByStatusOrderBySessionDateAsc(SessionStatus status);
+    // B3 
+    List<TrainingSession> findBySessionDateBetweenOrderBySessionDateAsc(
+            LocalDate start,
+            LocalDate end
+    );
 }
