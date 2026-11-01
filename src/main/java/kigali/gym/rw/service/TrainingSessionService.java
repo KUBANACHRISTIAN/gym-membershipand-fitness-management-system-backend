@@ -30,30 +30,48 @@ public class TrainingSessionService {
     @Autowired
     private TrainerRepository trainerRepo;
 
-    // A2 
-
+       // A2 + D1
     public String saveSession(TrainingSession session) {
 
-        Optional<Member> member = findMember(session.getMember());
+        if (session.getMember() == null || session.getMember().getId() == null) {
+            return "The member with that id does not exist";
+        }
+
+        Optional<Member> member = memberRepo.findById(session.getMember().getId());
 
         if (member.isEmpty()) {
             return "The member with that id does not exist";
         }
 
-        Optional<Trainer> trainer = findTrainer(session.getTrainer());
+        if (session.getTrainer() == null || session.getTrainer().getId() == null) {
+            return "The trainer with that id does not exist";
+        }
+
+        Optional<Trainer> trainer = trainerRepo.findById(session.getTrainer().getId());
 
         if (trainer.isEmpty()) {
             return "The trainer with that id does not exist";
         }
 
-        session.setId(null);
+        if (session.getSessionDate() == null) {
+            return "Training session date is required";
+        }
+
+        if (session.getSessionDate().isBefore(LocalDate.now())) {
+            return "Training session date cannot be in the past";
+        }
+
+        if (sessionRepo.existsByTrainer_IdAndSessionDateAndStatusNot(
+                trainer.get().getId(),
+                session.getSessionDate(),
+                SessionStatus.CANCELLED)) {
+            return "Trainer already has a session on that date";
+        }
+
         session.setMember(member.get());
         session.setTrainer(trainer.get());
 
-       
-        if (session.getStatus() == null) {
-            session.setStatus(SessionStatus.BOOKED);
-        }
+        session.setStatus(SessionStatus.BOOKED);
 
         sessionRepo.save(session);
 

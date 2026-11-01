@@ -23,13 +23,24 @@ public class TrainingSessionController {
     @Autowired
     private TrainingSessionService sessionService;
 
-    @PostMapping("/save")
+      // A2 + D1
+    @PostMapping(value = "/save", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> saveSession(@RequestBody TrainingSession session) {
 
         String message = sessionService.saveSession(session);
 
-        if (message.contains("does not exist")) {
+        if (message.equals("The member with that id does not exist")
+                || message.equals("The trainer with that id does not exist")) {
             return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+        }
+
+        if (message.equals("Training session date cannot be in the past")
+                || message.equals("Training session date is required")) {
+            return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
+        }
+
+        if (message.equals("Trainer already has a session on that date")) {
+            return new ResponseEntity<>(message, HttpStatus.CONFLICT);
         }
 
         return new ResponseEntity<>(message, HttpStatus.CREATED);
