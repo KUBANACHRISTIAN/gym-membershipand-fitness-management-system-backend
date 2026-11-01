@@ -30,4 +30,10 @@ public interface TrainingSessionRepository extends JpaRepository<TrainingSession
             LocalDate start,
             LocalDate end
     );
+    // D1 
+    boolean existsByTrainer_IdAndSessionDateAndStatusNot(
+            UUID trainerId,
+            LocalDate sessionDate,
+            SessionStatus status
+    );
 }
