@@ -83,4 +83,9 @@ public class TrainingSpecialtyService {
 
         return "Training specialty deleted successfully";
     }
+       
+    // C3
+    public List<TrainingSpecialty> getUnusedSpecialties() {
+        return specialtyRepo.findUnusedSpecialties();
+    }
 }

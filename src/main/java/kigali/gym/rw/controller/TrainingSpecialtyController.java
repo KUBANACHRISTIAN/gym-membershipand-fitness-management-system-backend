@@ -89,4 +89,12 @@ public class TrainingSpecialtyController {
 
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
+     // C3
+    @GetMapping("/unused")
+    public ResponseEntity<?> getUnusedSpecialties() {
+
+        List<TrainingSpecialty> specialties = specialtyService.getUnusedSpecialties();
+
+        return new ResponseEntity<>(specialties, HttpStatus.OK);
+    }
 }
