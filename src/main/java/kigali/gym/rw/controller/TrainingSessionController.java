@@ -3,11 +3,17 @@ package kigali.gym.rw.controller;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+ import java.util.UUID;
+
+import org.springframework.web.bind.annotation.*;
+
+import kigali.gym.rw.entity.SessionStatus;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.MediaType;
 
 import kigali.gym.rw.entity.TrainingSession;
 import kigali.gym.rw.service.TrainingSessionService;
@@ -119,5 +125,23 @@ public class TrainingSessionController {
         List<TrainingSession> sessions = sessionService.getSessionsBetween(start, end);
 
         return new ResponseEntity<>(sessions, HttpStatus.OK);
+    }
+        // D2
+    @PatchMapping("/{id}/status")
+    public ResponseEntity<?> updateStatus(
+            @PathVariable("id") UUID id,
+            @RequestParam("status") SessionStatus status) {
+
+        String message = sessionService.updateStatus(id, status);
+
+        if (message.equals("The training session with that id does not exist")) {
+            return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+        }
+
+        if (message.startsWith("Cannot change status")) {
+            return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity<>(message, HttpStatus.OK);
     }
 }

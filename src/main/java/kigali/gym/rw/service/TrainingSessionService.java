@@ -5,6 +5,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.Optional;
+import java.util.UUID;
+
+import kigali.gym.rw.entity.SessionStatus;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -186,5 +190,38 @@ public class TrainingSessionService {
       // B3
     public List<TrainingSession> getSessionsBetween(LocalDate start, LocalDate end) {
         return sessionRepo.findBySessionDateBetweenOrderBySessionDateAsc(start, end);
+    }
+        // D2
+    public String updateStatus(UUID id, SessionStatus newStatus) {
+
+        Optional<TrainingSession> session = sessionRepo.findById(id);
+
+        if (session.isEmpty()) {
+            return "The training session with that id does not exist";
+        }
+
+        SessionStatus current = session.get().getStatus();
+        boolean allowed = false;
+
+        if (current == SessionStatus.BOOKED
+                && (newStatus == SessionStatus.CHECKED_IN || newStatus == SessionStatus.CANCELLED)) {
+            allowed = true;
+        }
+
+        if (current == SessionStatus.CHECKED_IN
+                && (newStatus == SessionStatus.FINISHED || newStatus == SessionStatus.CANCELLED)) {
+            allowed = true;
+        }
+
+       
+
+        if (!allowed) {
+            return "Cannot change status from " + current + " to " + newStatus;
+        }
+
+        session.get().setStatus(newStatus);
+        sessionRepo.save(session.get());
+
+        return "Training session status updated successfully";
     }
 }
