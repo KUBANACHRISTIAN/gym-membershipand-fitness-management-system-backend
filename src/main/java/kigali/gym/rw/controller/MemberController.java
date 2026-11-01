@@ -86,4 +86,12 @@ public class MemberController {
 
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
+    // B1
+    @GetMapping("/by-last-name")
+    public ResponseEntity<?> getMembersByLastName(@RequestParam String lastName) {
+
+        List<Member> members = memberService.getMembersByLastName(lastName);
+
+        return new ResponseEntity<>(members, HttpStatus.OK);
+    }
 }

@@ -91,4 +91,8 @@ public class MemberService {
 
         return "Member deleted successfully";
     }
+     // B1
+    public List<Member> getMembersByLastName(String lastName) {
+        return memberRepo.findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
+    }
 }
