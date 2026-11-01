@@ -28,6 +28,8 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 @Service
 public class TrainingSessionService {
@@ -258,5 +260,9 @@ public class TrainingSessionService {
         int res = sessionRepo.cancelDayForTrainer(trainerId, date);
 
         return res + " training sessions cancelled";
+    }
+     // bonus
+    public Page<TrainingSession> getSessionsPage(Pageable pageable) {
+        return sessionRepo.findAll(pageable);
     }
 }

@@ -20,7 +20,10 @@ import kigali.gym.rw.service.TrainingSessionService;
 import kigali.gym.rw.entity.SessionStatus;
 import java.time.LocalDate;
 import java.util.Map;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @RestController
@@ -167,5 +170,34 @@ public class TrainingSessionController {
         String message = sessionService.cancelDay(trainerId, date);
 
         return new ResponseEntity<>(message, HttpStatus.OK);
+    }
+        // bonus
+    @GetMapping("/page")
+    public ResponseEntity<?> getSessionsPage(
+            @RequestParam(value = "page", defaultValue = "0") int page,
+            @RequestParam(value = "size", defaultValue = "5") int size,
+            @RequestParam(value = "sort", defaultValue = "sessionDate,asc") String sort) {
+
+        if (page < 0 || size < 1) {
+            return new ResponseEntity<>("page must be 0 or more and size at least 1", HttpStatus.BAD_REQUEST);
+        }
+
+        String[] parts = sort.split(",");
+        String field = parts[0].trim();
+
+        if (!field.equals("sessionDate") && !field.equals("durationMinutes") && !field.equals("status")) {
+            return new ResponseEntity<>("Cannot sort by " + field, HttpStatus.BAD_REQUEST);
+        }
+
+        Sort.Direction dir = Sort.Direction.ASC;
+        if (parts.length > 1 && parts[1].trim().equalsIgnoreCase("desc")) {
+            dir = Sort.Direction.DESC;
+        }
+
+        Pageable pageable = PageRequest.of(page, size, Sort.by(dir, field));
+
+        Page<TrainingSession> res = sessionService.getSessionsPage(pageable);
+
+        return new ResponseEntity<>(res, HttpStatus.OK);
     }
 }
