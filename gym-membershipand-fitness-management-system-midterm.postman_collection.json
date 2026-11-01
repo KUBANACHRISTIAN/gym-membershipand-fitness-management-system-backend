@@ -1,0 +1,2190 @@
+{
+  "info": {
+    "_postman_id": "ce42939e-0fd4-47da-934e-c676080c62b0",
+    "name": "Gym Membership and Fitness Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58413364"
+  },
+  "item": [
+    {
+      "name": "A2 http://localhost:8086/api/training-specialties/save",
+      "request": {
+        "auth": {
+          "type": "inherit"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"name\": \"Cardio\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-specialties/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-specialties",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 training-specialties(strength training save )",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"name\": \"Strength Training\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-specialties/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-specialties",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 training specialties (yoga saved)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"name\": \"Yoga\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-specialties/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-specialties",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 training specialties (boxing saved )",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"name\": \"Boxing\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-specialties/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-specialties",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 409 conflict (training specialty with that name already exists",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"name\": \"Cardio\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-specialties/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-specialties",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 400 bad Request (training specialty name is required",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"name\": \"\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-specialties/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-specialties",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 training specialty get all data",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/training-specialties/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-specialties",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 get boxing name by using Id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/training-specialties/70085896-c624-41b7-9b38-5e03d15740b0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-specialties",
+            "70085896-c624-41b7-9b38-5e03d15740b0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 the training specialty with that id does not exist",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 training specialty updated",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"name\": \"Kickboxing\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-specialties/update/70085896-c624-41b7-9b38-5e03d15740b0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-specialties",
+            "update",
+            "70085896-c624-41b7-9b38-5e03d15740b0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 name : temp saved",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 New request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/training-specialties/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-specialties",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 training specialty deleted",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/training-specialties/delete/9db34cb5-12c2-46bb-b5a1-1f61abefc5f2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-specialties",
+            "delete",
+            "9db34cb5-12c2-46bb-b5a1-1f61abefc5f2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 studio saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/studios/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "studios",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 STUDIO SAVED",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"studioNumber\": 2, \"name\": \"Weights Hall\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/studios/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "studios",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 studio saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"studioNumber\": 3, \"name\": \"Yoga Studio\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/studios/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "studios",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 studio saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"studioNumber\": 4, \"name\": \"Boxing Ring\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/studios/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "studios",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 studio with that studioNumber already exists",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"studioNumber\": 1, \"name\": \"Cardio Room\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/studios/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "studios",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 GET ALL STUDIOS",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 get room by using id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 unknown id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 studio update  using id",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"studioNumber\": 4, \"name\": \"Boxing Ring A\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/studios/update/525761aa-ad20-4116-841f-97d351ce799d",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "studios",
+            "update",
+            "525761aa-ad20-4116-841f-97d351ce799d"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 update by using unknown id",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/studios/update/00000000-0000-0000-0000-000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "studios",
+            "update",
+            "00000000-0000-0000-0000-000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 trainer saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Eric\",\r\n  \"lastName\": \"Habimana\",\r\n  \"phone\": \"0788000001\",\r\n  \"studio\": { \"studioNumber\": 1 },\r\n  \"specialties\": [ { \"id\": \"1e226af9-0922-46ba-a0f7-0f155acdf93f\" }, { \"id\": \"dc84a9f7-a867-41f9-b25d-995788834254\" } ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/trainers/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "trainers",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 trainer saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Aline\",\r\n  \"lastName\": \"Uwase\",\r\n  \"phone\": \"0788000002\",\r\n  \"studio\": { \"studioNumber\": 2 },\r\n  \"specialties\": [ { \"id\": \"dc84a9f7-a867-41f9-b25d-995788834254\" } ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/trainers/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "trainers",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 trainer saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Patrick\",\r\n  \"lastName\": \"Niyonzima\",\r\n  \"phone\": \"0788000003\",\r\n  \"studio\": { \"studioNumber\": 3 },\r\n  \"specialties\": [ { \"id\": \"53fcd587-44bd-40b8-9171-0971a3deb0e6\" } ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/trainers/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "trainers",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 The studio with that studioNumber does not exist",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Test\",\r\n  \"lastName\": \"NoStudio\",\r\n  \"phone\": \"0788000098\",\r\n  \"studio\": { \"studioNumber\": 99 },\r\n  \"specialties\": []\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/trainers/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "trainers",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 GET all trainers",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 get the trainer by using ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 GET trainer by using fake id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 update trainer by using id",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Eric\",\r\n  \"lastName\": \"Habimana Jr\",\r\n  \"phone\": \"0788111111\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/trainers/update/640c83dd-d041-4577-be8f-5c88f67ff7fb",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "trainers",
+            "update",
+            "640c83dd-d041-4577-be8f-5c88f67ff7fb"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 member saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Jean\",\r\n  \"lastName\": \"Mugisha\",\r\n  \"membershipNumber\": \"GYM-0042\",\r\n  \"email\": \"jean.mugisha@gmail.com\",\r\n  \"phone\": \"0789100042\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/members/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "members",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 member saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Mugisha\",\r\n  \"membershipNumber\": \"GYM-0043\",\r\n  \"email\": \"Alice.mugisha@gmail.com\",\r\n  \"phone\": \"0789100043\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/members/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "members",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 MEMBER SAVED",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Grace\",\r\n  \"lastName\": \"Ingabire\",\r\n  \"membershipNumber\": \"GYM-0044\",\r\n  \"email\": \"grace.ingabire@gmail.com\",\r\n  \"phone\": \"0789100044\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/members/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "members",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 member save",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"David\",\r\n  \"lastName\": \"Nkurunziza\",\r\n  \"membershipNumber\": \"GYM-0045\",\r\n  \"email\": \"david.nkurunziza@gmail.com\",\r\n  \"phone\": \"0789100045\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/members/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "members",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 member",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Sandrine\",\r\n  \"lastName\": \"Mukamana\",\r\n  \"membershipNumber\": \"GYM-0046\",\r\n  \"email\": \"Sandrine.m@gmail.com\",\r\n  \"phone\": \"0789100046\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/members/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "members",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 Duplicate",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Jean\",\r\n  \"lastName\": \"Mugisha\",\r\n  \"membershipNumber\": \"GYM-0042\",\r\n  \"email\": \"jean.mugisha@gmail.com\",\r\n  \"phone\": \"0789100042\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/members/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "members",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 get all members",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 training session save",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"sessionDate\": \"2026-10-06\",\r\n  \"durationMinutes\": 60,\r\n  \"status\": \"FINISHED\",\r\n  \"member\": { \"id\": \"369b7c0e-fc4e-4997-a66c-9d8d9262c035\" },\r\n  \"trainer\": { \"id\": \"640c83dd-d041-4577-be8f-5c88f67ff7fb\" }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 trainer session saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"sessionDate\": \"2026-10-06\",\r\n  \"durationMinutes\": 60,\r\n  \"status\": \"FINISHED\",\r\n  \"member\": { \"id\": \"a702b730-9e10-4b80-8aa3-f39f7f463c02\" },\r\n  \"trainer\": { \"id\": \"6d8201f0-f2cf-497d-a90c-a95b90a67892\" }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 training session saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"sessionDate\": \"2026-10-06\",\r\n  \"durationMinutes\": 60,\r\n  \"status\": \"CANCELLED\",\r\n  \"member\": { \"id\": \"0870ac77-1ef9-4a6f-a8a3-8bc3d581db30\" },\r\n  \"trainer\": { \"id\": \"640c83dd-d041-4577-be8f-5c88f67ff7fb\" }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 training session saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"sessionDate\": \"2026-10-06\",\r\n  \"durationMinutes\": 60,\r\n  \"status\": \"BOOKED\",\r\n  \"member\": { \"id\": \"369b7c0e-fc4e-4997-a66c-9d8d9262c035\" },\r\n  \"trainer\": { \"id\": \"640c83dd-d041-4577-be8f-5c88f67ff7fb\" }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 training session saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"sessionDate\": \"2026-10-06\",\r\n  \"durationMinutes\": 60,\r\n  \"status\": \"CHECKED_IN\",\r\n  \"member\": { \"id\": \"5a0053eb-4f64-498d-878a-797e673f6a7f\" },\r\n  \"trainer\": { \"id\": \"3f0eb561-6d8e-4177-ab61-659be8cde0ec\" }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 training session saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"sessionDate\": \"2026-10-06\",\r\n  \"durationMinutes\": 60,\r\n  \"status\": \"FINISHED\",\r\n  \"member\": { \"id\": \"369b7c0e-fc4e-4997-a66c-9d8d9262c035\" },\r\n  \"trainer\": { \"id\": \"6d8201f0-f2cf-497d-a90c-a95b90a67892\" }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 training session saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"sessionDate\": \"2026-10-06\",\r\n  \"durationMinutes\": 60,\r\n  \"status\": \"BOOKED\",\r\n  \"member\": { \"id\": \"8028a31f-26bf-4f7f-80fb-cb35f9f5b5bf\" },\r\n  \"trainer\": { \"id\": \"3f0eb561-6d8e-4177-ab61-659be8cde0ec\" }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 training session saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"sessionDate\": \"2026-10-06\",\r\n  \"durationMinutes\": 60,\r\n  \"status\": \"BOOKED\",\r\n  \"member\": { \"id\": \"369b7c0e-fc4e-4997-a66c-9d8d9262c035\" },\r\n  \"trainer\": { \"id\": \"640c83dd-d041-4577-be8f-5c88f67ff7fb\" }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 TRAINING SESSION SAVED",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"sessionDate\": \"2026-10-06\",\r\n  \"durationMinutes\": 60,\r\n  \"status\": \"BOOKED\",\r\n  \"member\": { \"id\": \"a702b730-9e10-4b80-8aa3-f39f7f463c02\" },\r\n  \"trainer\": { \"id\": \"3f0eb561-6d8e-4177-ab61-659be8cde0ec\" }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 TRAINING SESSION SAVED",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"sessionDate\": \"2026-10-06\",\r\n  \"durationMinutes\": 60,\r\n  \"status\": \"CANCELLED\",\r\n  \"member\": { \"id\": \"5a0053eb-4f64-498d-878a-797e673f6a7f\" },\r\n  \"trainer\": { \"id\": \"6d8201f0-f2cf-497d-a90c-a95b90a67892\" }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 get all  training sessions",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B1 get all last name called mugisha",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "B1 - uppercase",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "B1 - no match",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "B2 - BOOKED",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/by-status?status=BOOKED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "by-status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "BOOKED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B2 - FINISHED",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "B2 - CANCELLED",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "B2 - invalid status (400)",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "B3 - October",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "B3 - inclusive",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "B3 - November",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "B3 - no match",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "B3 - bad date (400)",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C1 - cardio",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C1 - uppercase",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C1 - two trainers",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C1 - nobody (failing case)",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C2 free studios",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C2 no free studio (failing case)",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C2 Expected: 201",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C2 get all trainers",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C2 trainer deleted",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C3 unused specialties",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C3 get all training specialties",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C3 SAVE TRAINER",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C3 its return again boxing",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/dashboard/summary",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "dashboard",
+            "summary"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C4 - Eric",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C4 - Aline",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "C4 - unknown trainer (404)",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "D2 GET ALL TRAINING SESSION",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "D2 UPDATE BETWEEN 2026=10-1 AND 2026-10-31",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"sessionDate\": \"2026-10-06\", \"durationMinutes\": 60 }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/between?start=2026-10-01&end=2026-10-31",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "between"
+          ],
+          "query": [
+            {
+              "key": "start",
+              "value": "2026-10-01"
+            },
+            {
+              "key": "end",
+              "value": "2026-10-31"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3 TRAINING SPECIALTY ADDED TO THE TRAINER",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/trainers/6d8201f0-f2cf-497d-a90c-a95b90a67892/training-specialties/53fcd587-44bd-40b8-9171-0971a3deb0e6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "trainers",
+            "6d8201f0-f2cf-497d-a90c-a95b90a67892",
+            "training-specialties",
+            "53fcd587-44bd-40b8-9171-0971a3deb0e6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3 THE TRAINER HAS THAT TRAINING SPECIALTY",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/trainers/6d8201f0-f2cf-497d-a90c-a95b90a67892/training-specialties/53fcd587-44bd-40b8-9171-0971a3deb0e6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "trainers",
+            "6d8201f0-f2cf-497d-a90c-a95b90a67892",
+            "training-specialties",
+            "53fcd587-44bd-40b8-9171-0971a3deb0e6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3 THAT TRAINING SPECIALTY FOES NOT EXIST",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/trainers/6d8201f0-f2cf-497d-a90c-a95b90a67892/training-specialties/00000000-0000-0000-0000-000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "trainers",
+            "6d8201f0-f2cf-497d-a90c-a95b90a67892",
+            "training-specialties",
+            "00000000-0000-0000-0000-000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3 The trainer with that id does not exist",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/trainers/00000000-0000-0000-0000-000000000000/training-specialties/53fcd587-44bd-40b8-9171-0971a3deb0e6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "trainers",
+            "00000000-0000-0000-0000-000000000000",
+            "training-specialties",
+            "53fcd587-44bd-40b8-9171-0971a3deb0e6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3 Aline with Strength Training and Yoga",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "D3 now returns Patrick and Aline",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "D4 Studio changed successfully (Eric moves from 1 to 4)",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/trainers/640c83dd-d041-4577-be8f-5c88f67ff7fb/studio?studioNumber=4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "trainers",
+            "640c83dd-d041-4577-be8f-5c88f67ff7fb",
+            "studio"
+          ],
+          "query": [
+            {
+              "key": "studioNumber",
+              "value": "4"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D4 200 again; Eric is already there, so it’s not a conflict",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/trainers/640c83dd-d041-4577-be8f-5c88f67ff7fb/studio?studioNumber=4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "trainers",
+            "640c83dd-d041-4577-be8f-5c88f67ff7fb",
+            "studio"
+          ],
+          "query": [
+            {
+              "key": "studioNumber",
+              "value": "4"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D4 That studio is taken by another trainer (Patrick is in 3)",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/trainers/6d8201f0-f2cf-497d-a90c-a95b90a67892/studio?studioNumber=3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "trainers",
+            "6d8201f0-f2cf-497d-a90c-a95b90a67892",
+            "studio"
+          ],
+          "query": [
+            {
+              "key": "studioNumber",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D4 The studio with that studioNumber does not exist",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/trainers/640c83dd-d041-4577-be8f-5c88f67ff7fb/studio?studioNumber=99",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "trainers",
+            "640c83dd-d041-4577-be8f-5c88f67ff7fb",
+            "studio"
+          ],
+          "query": [
+            {
+              "key": "studioNumber",
+              "value": "99"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D4 The trainer with that id does not exist",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/trainers/00000000-0000-0000-0000-000000000000/studio?studioNumber=4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "trainers",
+            "00000000-0000-0000-0000-000000000000",
+            "studio"
+          ],
+          "query": [
+            {
+              "key": "studioNumber",
+              "value": "4"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D4 shows Eric with \"studioNumber\": 4",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "D4 now returns studio 1, because Eric left it",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "E1 Workout log saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"exerciseName\": \"Squat\",\r\n  \"notes\": \"Good form, increase weight next time\",\r\n  \"reps\": 12\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/workout-logs/save?trainingSessionId=55fe8473-248b-477e-9517-32346222ab9b",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "workout-logs",
+            "save"
+          ],
+          "query": [
+            {
+              "key": "trainingSessionId",
+              "value": "55fe8473-248b-477e-9517-32346222ab9b"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E1 Workout log saved",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"exerciseName\": \"Bench Press\",\r\n  \"notes\": \"Felt strong\",\r\n  \"reps\": 10\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/workout-logs/save?trainingSessionId=f32b9ab5-30e1-4e0c-b8e4-866d4c268c89",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "workout-logs",
+            "save"
+          ],
+          "query": [
+            {
+              "key": "trainingSessionId",
+              "value": "f32b9ab5-30e1-4e0c-b8e4-866d4c268c89"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E1 Workout logs are only for FINISHED training sessions",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"exerciseName\": \"Squat\",\r\n  \"notes\": \"Should fail\",\r\n  \"reps\": 12\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/workout-logs/save?trainingSessionId=7fbbfa20-ebd0-4c03-9bd0-1e7461ec4c11",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "workout-logs",
+            "save"
+          ],
+          "query": [
+            {
+              "key": "trainingSessionId",
+              "value": "7fbbfa20-ebd0-4c03-9bd0-1e7461ec4c11"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E1 404",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"exerciseName\": \"Squat\",\r\n  \"notes\": \"Should fail\",\r\n  \"reps\": 12\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8086/api/workout-logs/save?trainingSessionId=00000000-0000-0000-0000-000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "workout-logs",
+            "save"
+          ],
+          "query": [
+            {
+              "key": "trainingSessionId",
+              "value": "00000000-0000-0000-0000-000000000000"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E1 GET ALL WORKOUT LOGS",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "E2 200, Jean’s 2 logs: Squat and Bench Press",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "E2 200 [] (Sandrine has no logs)",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "E2 200 [] (no such member)",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "E3 That training session has workout logs, delete them first",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/delete/55fe8473-248b-477e-9517-32346222ab9b",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "delete",
+            "55fe8473-248b-477e-9517-32346222ab9b"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E3 The workout log with that id does not exist",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/workout-logs/delete/00000000-0000-0000-0000-000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "workout-logs",
+            "delete",
+            "00000000-0000-0000-0000-000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "(E2) now shows only Squat.",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "F1 Expected: 200",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "F1 Training session status updated successfully",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/0160e0b3-0cf4-464f-a878-0e82d2335728/status?status=FINISHED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "0160e0b3-0cf4-464f-a878-0e82d2335728",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "FINISHED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "F2 training sessions cancelled",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/cancel-day?trainerId=640c83dd-d041-4577-be8f-5c88f67ff7fb&date=2026-10-20",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "cancel-day"
+          ],
+          "query": [
+            {
+              "key": "trainerId",
+              "value": "640c83dd-d041-4577-be8f-5c88f67ff7fb"
+            },
+            {
+              "key": "date",
+              "value": "2026-10-20"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "F2 0 training sessions cancelled",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/cancel-day?trainerId=640c83dd-d041-4577-be8f-5c88f67ff7fb&date=2026-10-06",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "cancel-day"
+          ],
+          "query": [
+            {
+              "key": "trainerId",
+              "value": "640c83dd-d041-4577-be8f-5c88f67ff7fb"
+            },
+            {
+              "key": "date",
+              "value": "2026-10-06"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "F2 0 training sessions cancelled",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8086/api/training-sessions/cancel-day?trainerId=640c83dd-d041-4577-be8f-5c88f67ff7fb&date=2027-01-15",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8086",
+          "path": [
+            "api",
+            "training-sessions",
+            "cancel-day"
+          ],
+          "query": [
+            {
+              "key": "trainerId",
+              "value": "640c83dd-d041-4577-be8f-5c88f67ff7fb"
+            },
+            {
+              "key": "date",
+              "value": "2027-01-15"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
