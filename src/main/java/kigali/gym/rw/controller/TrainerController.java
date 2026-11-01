@@ -86,4 +86,13 @@ public class TrainerController {
 
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
+     // C1
+     
+    @GetMapping("/by-training-specialty")
+    public ResponseEntity<?> getTrainersBySpecialty(@RequestParam("name") String name) {
+
+        List<Trainer> trainers = trainerService.getTrainersBySpecialty(name);
+
+        return new ResponseEntity<>(trainers, HttpStatus.OK);
+    }
 }

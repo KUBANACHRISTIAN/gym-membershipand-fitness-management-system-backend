@@ -162,4 +162,8 @@ public class TrainerService {
         }
         return studioRepo.findByStudioNumber(fromBody.getStudioNumber());
     }
+    // C1
+    public List<Trainer> getTrainersBySpecialty(String name) {
+        return trainerRepo.findTrainersBySpecialtyName(name);
+    }
 }
