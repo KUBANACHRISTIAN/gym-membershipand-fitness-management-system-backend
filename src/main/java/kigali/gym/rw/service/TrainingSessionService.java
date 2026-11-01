@@ -16,6 +16,7 @@ import kigali.gym.rw.entity.TrainingSession;
 import kigali.gym.rw.repository.MemberRepository;
 import kigali.gym.rw.repository.TrainerRepository;
 import kigali.gym.rw.repository.TrainingSessionRepository;
+import java.time.LocalDate;
 
 @Service
 public class TrainingSessionService {
@@ -163,5 +164,9 @@ public class TrainingSessionService {
     // B2
     public List<TrainingSession> getSessionsByStatus(SessionStatus status) {
         return sessionRepo.findByStatusOrderBySessionDateAsc(status);
+    }
+      // B3
+    public List<TrainingSession> getSessionsBetween(LocalDate start, LocalDate end) {
+        return sessionRepo.findBySessionDateBetweenOrderBySessionDateAsc(start, end);
     }
 }

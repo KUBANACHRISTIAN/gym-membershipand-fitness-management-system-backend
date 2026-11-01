@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import kigali.gym.rw.entity.TrainingSession;
 import kigali.gym.rw.service.TrainingSessionService;
 import kigali.gym.rw.entity.SessionStatus;
+import java.time.LocalDate;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @RestController
 @RequestMapping("/api/training-sessions")
@@ -93,6 +96,16 @@ public class TrainingSessionController {
     public ResponseEntity<?> getSessionsByStatus(@RequestParam SessionStatus status) {
 
         List<TrainingSession> sessions = sessionService.getSessionsByStatus(status);
+
+        return new ResponseEntity<>(sessions, HttpStatus.OK);
+    }
+    // B3
+    @GetMapping("/between")
+    public ResponseEntity<?> getSessionsBetween(
+            @RequestParam("start") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate start,
+            @RequestParam("end") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate end) {
+
+        List<TrainingSession> sessions = sessionService.getSessionsBetween(start, end);
 
         return new ResponseEntity<>(sessions, HttpStatus.OK);
     }
