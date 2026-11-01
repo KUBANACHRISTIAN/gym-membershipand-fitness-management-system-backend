@@ -27,7 +27,7 @@ Entities: Member, Trainer, TrainingSpecialty, Studio, TrainingSession, WorkoutLo
 3. Open `src/main/resources/application.properties` and set your PostgreSQL username and password:
    ```properties
    spring.datasource.username=postgres
-   spring.datasource.password=your_password
+   spring.datasource.password=12345
    ```
 4. Start the application:
    ```bash
