@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import kigali.gym.rw.entity.TrainingSession;
 import kigali.gym.rw.service.TrainingSessionService;
+import kigali.gym.rw.entity.SessionStatus;
 
 @RestController
 @RequestMapping("/api/training-sessions")
@@ -86,5 +87,13 @@ public class TrainingSessionController {
         }
 
         return new ResponseEntity<>(message, HttpStatus.OK);
+    }
+    // B2
+    @GetMapping("/by-status")
+    public ResponseEntity<?> getSessionsByStatus(@RequestParam SessionStatus status) {
+
+        List<TrainingSession> sessions = sessionService.getSessionsByStatus(status);
+
+        return new ResponseEntity<>(sessions, HttpStatus.OK);
     }
 }

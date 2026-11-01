@@ -160,4 +160,8 @@ public class TrainingSessionService {
         }
         return trainerRepo.findById(fromBody.getId());
     }
+    // B2
+    public List<TrainingSession> getSessionsByStatus(SessionStatus status) {
+        return sessionRepo.findByStatusOrderBySessionDateAsc(status);
+    }
 }
