@@ -45,4 +45,12 @@ public class WorkoutLogController {
 
         return new ResponseEntity<>(logs, HttpStatus.OK);
     }
+     // E2
+    @GetMapping("/member/{membershipNumber}")
+    public ResponseEntity<?> getLogsOfMember(@PathVariable("membershipNumber") String membershipNumber) {
+
+        List<WorkoutLog> logs = workoutLogService.getLogsOfMember(membershipNumber);
+
+        return new ResponseEntity<>(logs, HttpStatus.OK);
+    }
 }

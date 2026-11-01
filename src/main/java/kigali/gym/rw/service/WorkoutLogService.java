@@ -47,4 +47,8 @@ public class WorkoutLogService {
     public List<WorkoutLog> getAllWorkoutLogs() {
         return workoutLogRepo.findAll();
     }
+     // E2
+    public List<WorkoutLog> getLogsOfMember(String membershipNumber) {
+        return workoutLogRepo.findLogsOfMember(membershipNumber);
+    }
 }
