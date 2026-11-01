@@ -86,4 +86,12 @@ public class StudioController {
 
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
+    // C2
+    @GetMapping("/free")
+    public ResponseEntity<?> getFreeStudios() {
+
+        List<Studio> studios = studioService.getFreeStudios();
+
+        return new ResponseEntity<>(studios, HttpStatus.OK);
+    }
 }

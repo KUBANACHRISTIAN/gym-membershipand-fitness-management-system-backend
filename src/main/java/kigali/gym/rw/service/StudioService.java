@@ -88,4 +88,8 @@ public class StudioService {
 
         return "Studio deleted successfully";
     }
+    // C2
+    public List<Studio> getFreeStudios() {
+        return studioRepo.findFreeStudios();
+    }
 }
