@@ -15,6 +15,7 @@ import kigali.gym.rw.repository.StudioRepository;
 import kigali.gym.rw.repository.TrainerRepository;
 import kigali.gym.rw.repository.TrainingSessionRepository;
 import kigali.gym.rw.repository.TrainingSpecialtyRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class TrainerService {
@@ -165,5 +166,30 @@ public class TrainerService {
     // C1
     public List<Trainer> getTrainersBySpecialty(String name) {
         return trainerRepo.findTrainersBySpecialtyName(name);
+    }
+        // D3
+    @Transactional
+    public String addSpecialty(UUID trainerId, UUID specialtyId) {
+
+        Optional<Trainer> trainer = trainerRepo.findById(trainerId);
+
+        if (trainer.isEmpty()) {
+            return "The trainer with that id does not exist";
+        }
+
+        Optional<TrainingSpecialty> specialty = specialtyRepo.findById(specialtyId);
+
+        if (specialty.isEmpty()) {
+            return "That training specialty does not exist";
+        }
+
+        if (trainer.get().getSpecialties().contains(specialty.get())) {
+            return "The trainer already has that training specialty";
+        }
+
+        trainer.get().getSpecialties().add(specialty.get());
+        trainerRepo.save(trainer.get());
+
+        return "Training specialty added to the trainer";
     }
 }

@@ -87,12 +87,31 @@ public class TrainerController {
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
      // C1
-     
+
     @GetMapping("/by-training-specialty")
     public ResponseEntity<?> getTrainersBySpecialty(@RequestParam("name") String name) {
 
         List<Trainer> trainers = trainerService.getTrainersBySpecialty(name);
 
         return new ResponseEntity<>(trainers, HttpStatus.OK);
+    }
+        // D3
+    @PutMapping("/{trainerId}/training-specialties/{trainingSpecialtyId}")
+    public ResponseEntity<?> addSpecialty(
+            @PathVariable("trainerId") UUID trainerId,
+            @PathVariable("trainingSpecialtyId") UUID trainingSpecialtyId) {
+
+        String message = trainerService.addSpecialty(trainerId, trainingSpecialtyId);
+
+        if (message.equals("The trainer with that id does not exist")
+                || message.equals("That training specialty does not exist")) {
+            return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+        }
+
+        if (message.equals("The trainer already has that training specialty")) {
+            return new ResponseEntity<>(message, HttpStatus.CONFLICT);
+        }
+
+        return new ResponseEntity<>(message, HttpStatus.OK);
     }
 }
